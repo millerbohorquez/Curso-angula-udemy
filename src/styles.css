@@ -1,0 +1,11 @@
+/* You can add global styles to this file, and also import other style files */
+.fondoAzul{
+    background:  rgb(68, 78, 68) ;
+}
+.fondoRojo{
+    background:  rgb(80, 42, 42) ;
+}
+.activado{
+    font-weight: bold;
+    background: yellow;
+}

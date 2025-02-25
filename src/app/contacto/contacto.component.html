@@ -1,0 +1,11 @@
+<p>contacto works!</p>
+<h3>{{title}}</h3>
+
+<div *ngIf="parametro"> 
+    El parametro es:
+    {{parametro}} 
+</div>
+<div *ngIf="!parametro"> 
+<button (click)="redirigir()">Ir a la Pagina con parametro</button>
+<button (click)="redirigirDos()">Ir al home</button>
+</div>

@@ -1,0 +1,10 @@
+<h1>{{title}}</h1>
+<hr>
+<nav>
+    <a [routerLink]="['/home']" [routerLinkActive]="['activado']">Home</a>-
+    <a [routerLink]="['/fruta']" [routerLinkActive]="['activado']">Frutas</a>-
+    <a [routerLink]="['/empleado']" [routerLinkActive]="['activado']">Empleado</a>-
+    <a [routerLink]="['/contacto']" [routerLinkActive]="['activado']">contacto</a>
+</nav>
+<!--<app-empledo>-->
+<router-outlet />

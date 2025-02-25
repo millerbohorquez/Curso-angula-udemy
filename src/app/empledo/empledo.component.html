@@ -1,0 +1,57 @@
+<h3>{{titulo}}</h3>
+<strong>Empleado estrella:</strong>
+
+<hr>
+
+<h3>Selector de colores</h3>
+<input type="text" [(ngModel)]="colorSeleccionado" />
+
+<pre [style.border]="colorSeleccionado == 'red' ? '5px solid black' : '5px solid blue'"
+[ngClass]=" {'fondoRojo': colorSeleccionado == 'red', 'fondoAzul': colorSeleccionado == 'blue'}">
+    <strong>Color elegido:</strong>
+    {{colorSeleccionado}}</pre>
+
+<div 
+[ngStyle]="{'background':colorSeleccionado, 'widht':'200px', 'height':'200px', 'float:':'left','margin-right':'80%', 'margin-left':'10%'}"
+></div>
+
+<div style="clear: both;"></div>
+
+<hr>
+<h3>Colores Switch</h3>
+<ul [ngSwitch]="color">
+    <li *ngSwitchCase="'red'" [ngStyle]="{'background':color, 'color':'white'}">Color rojo</li>
+</ul>
+
+<hr>
+<div *ngIf="trabajadorExterno == true">
+    <button (click)="cambiarExterno(false)"> Empleado</button>
+    <ul>
+        <li>{{trabajadores[0].nombre}}-{{trabajadores[0].edad}}-{{trabajadores[0].cargo}}</li>
+        <li>{{trabajadores[1].nombre}}-{{trabajadores[1].edad}}-{{trabajadores[1].cargo}}</li>
+        <li>{{trabajadores[2].nombre}}-{{trabajadores[2].edad}}-{{trabajadores[2].cargo}}</li>
+    </ul>
+</div>
+<div *ngIf="trabajadorExterno == false">
+    <button (click)="cambiarExterno(true)"> Trabajador</button>
+    <ul>
+        <li>{{empleado.nombre}}-{{empleado.edad}}-{{empleado.cargo}}</li>
+        <li>{{empleado.nombre}}-{{empleado.edad}}-{{empleado.cargo}}</li>
+        <li>{{empleado.nombre}}-{{empleado.edad}}-{{empleado.cargo}}</li>
+    </ul>
+</div>
+
+<hr>
+
+<h3>Lista</h3>
+<ul>
+    <li *ngFor="let empleado of trabajadores; let i = index" >
+        Empleado {{i+1}}:
+        <ul>
+            <li>{{empleado.nombre}}-{{empleado.edad}}-{{empleado.cargo}}</li>
+            <li>{{empleado.nombre}}-{{empleado.edad}}-{{empleado.cargo}}</li>
+            <li>{{empleado.nombre}}-{{empleado.edad}}-{{empleado.cargo}}</li>
+        </ul>
+    </li>
+</ul>
+
